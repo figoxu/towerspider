@@ -22,15 +22,17 @@ type DataSource struct {
 }
 
 const (
-	RedisServer   = "redis.server"
-	RedisPassword = "redis.password"
-	RedisDbno     = "redis.dbno"
-	RedisSize     = "redis.size"
-	MySqlHost     = "mysql.host"
-	MySqlPort     = "mysql.port"
-	MySqlDbName   = "mysql.db_name"
-	MySqlUser     = "mysql.user"
-	MySqlPassword = "mysql.password"
+	RedisServer   = "redis_server"
+	RedisPassword = "redis_password"
+	RedisDbno     = "redis_dbno"
+	RedisSize     = "redis_size"
+	MySqlHost     = "mysql_host"
+	MySqlPort     = "mysql_port"
+	MySqlDbName   = "mysql_db_name"
+	MySqlUser     = "mysql_user"
+	MySqlPassword = "mysql_password"
+	TowerUser     = "tower_user"
+	TowerPassword = "tower_password"
 )
 
 func init() {
@@ -43,6 +45,10 @@ func init() {
 	viper.SetDefault(MySqlDbName, "tower")
 	viper.SetDefault(MySqlUser, "root")
 	viper.SetDefault(MySqlPassword, "123456")
+	viper.SetDefault(TowerUser, "test@qq.com")
+	viper.SetDefault(TowerPassword, "123456")
+	viper.BindEnv(TowerUser, TowerPassword)
+	viper.AutomaticEnv()
 }
 
 func mysqlConStr() string {
@@ -78,4 +84,10 @@ func testRedis(rp *redis.Pool) {
 	defer con.Close()
 	_, err := redis.String(con.Do("ping"))
 	utee.Chk(err)
+}
+
+func TowerInfo() (user, password string) {
+	user = viper.GetString(TowerUser)
+	password = viper.GetString(TowerPassword)
+	return user, password
 }

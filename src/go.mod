@@ -10,6 +10,7 @@ require (
 	github.com/pborman/uuid v1.2.0 // indirect
 	github.com/quexer/red v0.0.0-20180417062350-f1b7a3071788
 	github.com/quexer/utee v0.0.0-20190108150253-9e899041b1d1
+	github.com/sclevine/agouti v3.0.0+incompatible
 	github.com/sirupsen/logrus v1.4.0
 	github.com/spf13/cobra v0.0.3
 	github.com/spf13/viper v1.3.2

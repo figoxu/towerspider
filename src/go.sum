@@ -37,6 +37,8 @@ github.com/quexer/red v0.0.0-20180417062350-f1b7a3071788 h1:gdwzNwfjAqK1eTwhiIf/
 github.com/quexer/red v0.0.0-20180417062350-f1b7a3071788/go.mod h1:llk+ORn1aYzMsl9zzSkLM0t93CVLCGllJ/xd8W2FKbQ=
 github.com/quexer/utee v0.0.0-20190108150253-9e899041b1d1 h1:dfiurFYTH3EYbNCi+MOW2HgWWhNmA0lCt8XlZ5JkX3I=
 github.com/quexer/utee v0.0.0-20190108150253-9e899041b1d1/go.mod h1:BaHHTYT2nKSHJCQBohp0ecBLRAamEUyZwZp4RpZ8iQU=
+github.com/sclevine/agouti v3.0.0+incompatible h1:8IBJS6PWz3uTlMP3YBIR5f+KAldcGuOeFkFbUWfBgK4=
+github.com/sclevine/agouti v3.0.0+incompatible/go.mod h1:b4WX9W9L1sfQKXeJf1mUTLZKJ48R1S7H23Ji7oFO5Bw=
 github.com/sirupsen/logrus v1.4.0 h1:yKenngtzGh+cUSSh6GWbxW2abRqhYUSR/t/6+2QqNvE=
 github.com/sirupsen/logrus v1.4.0/go.mod h1:LxeOpSwHxABJmUn/MG1IvRgCAasNZTLOkJPxbbu5VWo=
 github.com/spf13/afero v1.1.2 h1:m8/z1t7/fwjysjQRYbP0RD+bUIF/8tJwPdEZsI83ACI=

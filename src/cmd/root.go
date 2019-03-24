@@ -41,9 +41,8 @@ func initConfigure() {
 		}
 
 		viper.AddConfigPath(home)
-		viper.SetConfigName(".qproxy")
+		viper.SetConfigName(".towerspider")
 	}
-
 	viper.AutomaticEnv()
 
 	if err := viper.ReadInConfig(); err == nil {
