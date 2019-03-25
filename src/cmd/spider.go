@@ -2,7 +2,7 @@ package cmd
 
 import (
 	"figoxu/towerspider/common/config"
-	"figoxu/towerspider/module/spider"
+	"figoxu/towerspider/module/spider/crawl"
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 )
@@ -19,11 +19,12 @@ var spiderCmd = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		user, password := config.TowerInfo()
 		logrus.WithField("user", user).WithField("password", password).Println("startup")
-		actionLogSpider := spider.NewActionLogSpider("https://tower.im/teams/9e7383ee99514ab497e5654832f2d522/events/")
+		fetchUrl := "https://tower.im/teams/9e7383ee99514ab497e5654832f2d522/events/"
+		actionLogSpider := crawl.NewActionLogSpider(fetchUrl, config.Ds)
 		for i := 0; i < 30; i++ {
 			actionLogSpider.More()
+			actionLogSpider.ParseAndSave()
 		}
-		actionLogSpider.ParseAndSave()
 
 		logrus.WithField("tp", taskTp).WithField("url", taskUrl).Println("start up")
 	},

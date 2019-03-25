@@ -1,6 +1,7 @@
 package config
 
 import (
+	"figoxu/towerspider/common/db/model"
 	"fmt"
 	"github.com/garyburd/redigo/redis"
 	"github.com/jinzhu/gorm"
@@ -67,6 +68,7 @@ func InitCfg() {
 		utee.Chk(err)
 		db.LogMode(true)
 		testMysql(db)
+		db.AutoMigrate(&model.ActionLog{})
 		Ds.Mysql = db
 
 		rp := red.CreatePool(viper.GetInt(RedisSize), viper.GetString(RedisServer), viper.GetString(RedisPassword), viper.GetInt(RedisDbno))
