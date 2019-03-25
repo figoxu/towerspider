@@ -9,7 +9,9 @@ import (
 const TOWER_TIME_FMT = "2006-01-02T15:04:05"
 
 func ClearTowerZoneInfo(text string) string { //tower时间范本: 2019-03-25T21:45:41+08:00
-	return strings.Replace(text, "+08:00", "", -1)
+	text = strings.Replace(text, "+08:00", "", -1)
+	text = strings.Replace(text, "Z", "", -1)
+	return text
 }
 
 func FormatTime(format, text string) time.Time {
